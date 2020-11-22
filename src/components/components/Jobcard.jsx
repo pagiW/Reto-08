@@ -9,20 +9,20 @@ import shortly from '../../images/shortly.svg';
 import insure from '../../images/insure.svg';
 import eyecam from '../../images/eyecam-co.svg';
 import airFilter from '../../images/the-air-filter-company.svg';
-import '../../styles/jobcard.css';
 import Role from './Role';
 import Level from './Level';
 import Languajes from './laguajes';
 import Tool from './Tool';
+import '../../styles/jobcard.css';
 
 const Jobcard = (props) => {
     const { id, company, nuevo, featured, position, role, level, postedAt, contract, location, languages, tools } = props;
     return (
         <section className='jobcard'>
-            <div className='company'>
+            <div className='company company-1'>
                 <img src={id === 1 ? photosnap : id === 2 ? manage : id === 3 ? account : id === 4 ? myHome : id === 5 ? loopStudios : id === 6 ? faceIt : id === 7 ? shortly : id === 8 ? insure : id === 9 ? eyecam : id === 10 && airFilter } alt={company} />
                 <div className='description'>
-                    <div className='company'>
+                    <div className='company company-2'>
                         <div className='name'>{company}</div>
                         { nuevo && <div className='new'><div>NEW!</div></div> }
                         { featured && <div className='featured'><div>FEATURED</div></div> }

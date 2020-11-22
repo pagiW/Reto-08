@@ -94,3 +94,40 @@
 .position:hover {
     color: hsl(180, 29%, 50%);
 }
+
+@media screen and (max-width: 600px) {
+    .jobcard {
+        flex-direction: column;
+        height: 300px;
+        padding: 0;
+        margin-top: 50px;
+    }
+    .company-1 {
+        flex-direction: column;
+        align-items: flex-start;
+        top: -15px;
+    }
+    .jobcard img {
+        width: 75px;
+        top: -15px;
+    }
+    .description {
+        margin: 0;
+    }
+    .filters {
+        width: 90%;
+        justify-content: flex-start;
+        border-top: 1px solid black;
+    }
+}
+@media screen and (max-width: 320px) {
+    .jobcard {
+        width: 95%;
+    }
+    .description {
+        left: 0;
+    }
+    .jobcard img {
+        left: 5px;
+    }
+}

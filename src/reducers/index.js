@@ -123,8 +123,100 @@ const reducers = (state, action) => {
                             } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
                                 return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]) && data.tools.includes(state.filters[n].tools[1]);
                             }
+                        } else if (state.filters[n].languages.length > 0 && state.filters[n].role === state.filters[n].isRole) {
+                            if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] === state.filters[0].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] === state.filters[0].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[0] === state.filters[0].language && state.filters[n].languages[2] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[2]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[1] === state.filters[0].language && state.filters[n].languages[2] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[0] === state.filters[0].language && state.filters[n].languages[1] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[1] === state.filters[0].language && state.filters[n].languages[0] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] === state.filters[0].language && state.filters[n].languages[1] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] === state.filters[0].language && state.filters[n].languages[0] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]) && data.role === state.filters[n].role;
+                            }
+                        } else if (state.filters[n].languages.length > 0 && state.filters[n].role === state.filters[0].isRole) {
+                            if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] === state.filters[n].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[2]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[1]) && data.role === state.filters[n].role;
+                            } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]) && data.role === state.filters[n].role;
+                            }
+                        } else if (state.filters[n].languages.length > 0 && state.filters[n].level === state.filters[n].isLevel) {
+                            if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] === state.filters[0].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] === state.filters[0].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[0] === state.filters[0].language && state.filters[n].languages[2] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[2]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[1] === state.filters[0].language && state.filters[n].languages[2] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[0] === state.filters[0].language && state.filters[n].languages[1] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[1] === state.filters[0].language && state.filters[n].languages[0] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] === state.filters[0].language && state.filters[n].languages[1] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] === state.filters[0].language && state.filters[n].languages[0] === state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]) && data.level === state.filters[n].level;
+                            }
+                        } else if (state.filters[n].languages.length > 0 && state.filters[n].level === state.filters[0].isLevel) {
+                            if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] !== state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] === state.filters[n].language && state.filters[n].languages[1] !== state.filters[n2].language && state.filters[n].languages[0] !== state.filters[n2].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[2]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[1]) && data.level === state.filters[n].level;
+                            } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]) && data.level === state.filters[n].level;
+                            }
                         } else if (state.filters[n].languages.length > 1) {
-                            if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
+                            if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language && state.filters[n].languages[1] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[1]);
+                            } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language && state.filters[n].languages[0] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]);
+                            } else if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language && state.filters[n].languages[2] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]);
+                            } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language && state.filters[n].languages[2] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]);
+                            } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[1] === state.filters[n].language && state.filters[n].languages[0] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[0]);
+                            } else if (state.filters[n].languages[2] === state.filters[n2].language && state.filters[n].languages[0] === state.filters[n].language && state.filters[n].languages[1] === state.filters[0].language) {
+                                return data.languages.includes(state.filters[n].languages[2]) && data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[1]);
+                            } else if (state.filters[n].languages[0] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
                                 return data.languages.includes(state.filters[n].languages[0]) && data.languages.includes(state.filters[n].languages[2]);
                             } else if (state.filters[n].languages[1] === state.filters[n2].language && state.filters[n].languages[2] === state.filters[n].language) {
                                 return data.languages.includes(state.filters[n].languages[1]) && data.languages.includes(state.filters[n].languages[2]);

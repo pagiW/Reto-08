@@ -12,50 +12,50 @@ const Filters = (props) => {
     const { filters, delteFilter, delte, setFiltered } = props;
     return (
         <section className='filtersList'>
-            <div>
+            <div className='allFilters'>
                 {
                     filters.map(filter => {
                         return(
                             <>
                                 {
                                     filter.isRole !== '' &&
-                                    <>
+                                    <div>
                                         <Role key={filters.isRole} {...filter} />
                                         <button className='filterButton' onClick={() => {
                                             delteFilter({isRole: filter.isRole});
                                             setFiltered();
                                         }}><img src={Remove} alt={`remove the ${filter.isRole} filter`} /></button>
-                                    </>
+                                    </div>
                                 }
                                 {
                                     filter.isLevel !== '' &&
-                                    <>
+                                    <div>
                                         <Level key={filters.isLevel} {...filter} />
                                         <button className='filterButton' onClick={() => {
                                             delteFilter({isLevel: filter.isLevel});
                                             setFiltered();
                                         }}><img src={Remove} alt={`remove the ${filter.isLevel} filter`} /></button>
-                                    </>
+                                    </div>
                                 }
                                 {
                                     filter.language !== '' &&
-                                    <>
+                                    <div>
                                         <Laguajes key={filters.language} {...filter} />
                                         <button className='filterButton' onClick={() => {
                                             delteFilter({language: filter.language});
                                             setFiltered();
                                         }}><img src={Remove} alt={`remove the ${filter.language} filter`} /></button>
-                                    </>
+                                    </div>
                                 }
                                 {
                                     filter.tool !== '' &&
-                                    <>
+                                    <div>
                                         <Tool key={filters.tool} {...filter} />
                                         <button className='filterButton' onClick={() => {
                                             delteFilter({tool: filter.tool});
                                             setFiltered();
                                         }}><img src={Remove} alt={`remove the ${filter.tool} filter`} /></button>
-                                    </>
+                                    </div>
                                 }
                             </>
                         )

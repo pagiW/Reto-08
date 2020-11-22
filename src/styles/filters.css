@@ -2,7 +2,6 @@
     border-radius: 5px;
     width: 85%;
     background-color: white;
-    margin: 15px 0;
     box-shadow: 1px 5px 20px -5px black;
     display: flex;
     align-items: center;
@@ -10,7 +9,13 @@
     padding: 0 30px;
     animation: showList 500ms forwards;
     position: absolute;
-    top: -130px;
+    top: -120px;
+}
+
+.allFilters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .filterButton {
@@ -41,8 +46,19 @@
 
 @keyframes showList {
     from {
-        height: 0;
+        min-height: 0;
     } to {
-        height: 75px;
+        min-height: 75px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .filtersList {
+        padding: 0;
+        padding: 10px 5px;
+        top: -165px;
+    }
+    .clear {
+        font-weight: bold;
     }
 }
