@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { compose, createStore } from 'redux';
 import App from './App';
 import reducers from './reducers';
 import reportWebVitals from './reportWebVitals';
@@ -12,7 +12,7 @@ const data = {
       "id": 1,
       "company": "Photosnap",
       "logo": "../../images/photosnap.svg",
-      "new": true,
+      "nuevo": true,
       "featured": true,
       "position": "Senior Frontend Developer",
       "role": "Frontend",
@@ -27,7 +27,7 @@ const data = {
       "id": 2,
       "company": "Manage",
       "logo": "../../images/manage.svg",
-      "new": true,
+      "nuevo": true,
       "featured": true,
       "position": "Fullstack Developer",
       "role": "Fullstack",
@@ -42,7 +42,7 @@ const data = {
       "id": 3,
       "company": "Account",
       "logo": "../../images/account.svg",
-      "new": true,
+      "nuevo": true,
       "featured": false,
       "position": "Junior Frontend Developer",
       "role": "Frontend",
@@ -57,7 +57,7 @@ const data = {
       "id": 4,
       "company": "MyHome",
       "logo": "../../images/myhome.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Junior Frontend Developer",
       "role": "Frontend",
@@ -72,7 +72,7 @@ const data = {
       "id": 5,
       "company": "Loop Studios",
       "logo": "../../images/loop-studios.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Software Engineer",
       "role": "FullStack",
@@ -87,7 +87,7 @@ const data = {
       "id": 6,
       "company": "FaceIt",
       "logo": "../../images/faceit.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Junior Backend Developer",
       "role": "Backend",
@@ -102,7 +102,7 @@ const data = {
       "id": 7,
       "company": "Shortly",
       "logo": "../../images/shortly.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Junior Developer",
       "role": "Frontend",
@@ -117,7 +117,7 @@ const data = {
       "id": 8,
       "company": "Insure",
       "logo": "../../images/insure.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Junior Frontend Developer",
       "role": "Frontend",
@@ -132,7 +132,7 @@ const data = {
       "id": 9,
       "company": "Eyecam Co.",
       "logo": "../../images/eyecam-co.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Full Stack Engineer",
       "role": "Fullstack",
@@ -147,7 +147,7 @@ const data = {
       "id": 10,
       "company": "The Air Filter Company",
       "logo": "../../images/the-air-filter-company.svg",
-      "new": false,
+      "nuevo": false,
       "featured": false,
       "position": "Front-end Dev",
       "role": "Frontend",
@@ -163,7 +163,9 @@ const data = {
   "filtereds": [],
 };
 
-const store = createStore(reducers, data);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(reducers, data, composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>

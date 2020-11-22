@@ -1,4 +1,5 @@
 {
+  "homepage": "https://pagiw.github.io/Reto-08",
   "name": "reto-08",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
     "web-vitals": "^0.2.4"

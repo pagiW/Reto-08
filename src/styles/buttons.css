@@ -1,0 +1,16 @@
+button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: hsl(180, 29%, 50%);
+    background-color: hsl(180, 31%, 95%);
+    font-weight: bold;
+    padding: 10px;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+button:hover, button:focus {
+    background-color: hsl(180, 29%, 50%);
+    color: hsl(180, 31%, 95%);
+}

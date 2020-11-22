@@ -1,0 +1,18 @@
+a {
+    color: hsl(180, 8%, 52%);
+    text-decoration: none;
+}
+
+a:hover {
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+}
+
+.ErrorTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: -75px;
+}
