@@ -120,10 +120,12 @@
         border-top: 1px solid black;
     }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
     .jobcard {
         width: 95%;
     }
+}
+@media screen and (max-width: 320px) {
     .description {
         left: 0;
     }
