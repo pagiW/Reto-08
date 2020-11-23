@@ -1,3 +1,8 @@
+# Reto-08
+Reto 08 de la escuela de desarrollo web en Platzi terminado
+
+este reto fue el mas dificil y el **unico** hecho con **react, react router y redux**
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
